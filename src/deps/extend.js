@@ -93,6 +93,8 @@ var extend = function() {
     if ((options = arguments[ i ]) != null) {
       // Extend the base object
       for ( name in options ) {
+        if ( !options.hasOwnProperty(name) ) continue;
+        
         src = target[ name ];
         copy = options[ name ];
 
